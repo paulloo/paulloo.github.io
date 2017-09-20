@@ -1,6 +1,18 @@
----
-theme :
-  name : bootstrap
----
-{% include JB/setup %}
-{% include themes/bootstrap/default.html %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+    {% include nav.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    {% include ga.html %}
+
+</body>
+
+</html>
