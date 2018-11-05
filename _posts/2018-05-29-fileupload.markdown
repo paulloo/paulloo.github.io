@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      "图片上传"
-subtitle:   "cloudinary"
-date:       2017-11-01T18:05:32.169Z
+subtitle:   cloudinary
+date:       2018-11-01T18:05:32.169Z
+categories: [js]
 author:     "Paul Ding"
-header-img: "//pic5.40017.cn/02/001/0c/51/rBLkCFlnNhCAFgn2AAGAqpjSpxM061.jpg"
 ---
 
 koa2 / jquery / cropper / cloudinary
