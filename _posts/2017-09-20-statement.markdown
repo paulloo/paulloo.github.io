@@ -2,7 +2,6 @@
 layout:     post
 title:      "Paul Blog 前端方向的博客分享乐园"
 subtitle:   "知识的分享也是对自我的总结，接受鼓励和批评，总要走出这一步！"
-date:       2017-09-20 15:37:00
 author:     "Paul Ding"
 header-img: "img/post-bg-06.jpg"
 ---
@@ -17,6 +16,22 @@ header-img: "img/post-bg-06.jpg"
 <h2 class="section-heading">CSS</h2>
 <blockquote>层叠样式表(Cascading Style Sheets)</blockquote>
 
+#### 文本溢出显示省略号
+单行
+```
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap
+```
+多行
+```
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+```
+
 <h2 class="section-heading">Javascript</h2>
 <blockquote>JavaScript，一种高级编程语言，通过解释执行，是一门动态类型，面向对象（基于原型）的直译语言。</blockquote>
 
@@ -25,6 +40,6 @@ header-img: "img/post-bg-06.jpg"
     <img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Post Sample Image">
 </a>
 <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span> -->
+<!-- 
 
-
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p> -->
