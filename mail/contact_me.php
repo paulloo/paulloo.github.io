@@ -13,21 +13,20 @@
 
 header('Access-Control-Allow-Origin:*'); 
 
-if(empty($_GET['name'])      ||
-   empty($_GET['email'])     ||
-   empty($_GET['phone'])     ||
-   empty($_GET['message'])   ||
-   !filter_var($_GET['email'],FILTER_VALIDATE_EMAIL))
+if(empty($_POST['name'])      ||
+   empty($_POST['email'])     ||
+   empty($_POST['phone'])     ||
+   empty($_POST['message'])   ||
+   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
    echo "No arguments Provided!";
    return false;
    }
    
-$name = strip_tags(htmlspecialchars($_GET['name']));
-$email_address = strip_tags(htmlspecialchars($_GET['email']));
-$phone = strip_tags(htmlspecialchars($_GET['phone']));
-$message = strip_tags(htmlspecialchars($_GET['message']));
-
+$name = strip_tags(htmlspecialchars($_POST['name']));
+$email_address = strip_tags(htmlspecialchars($_POST['email']));
+$phone = strip_tags(htmlspecialchars($_POST['phone']));
+$message = strip_tags(htmlspecialchars($_POST['message']));
    
 // Create the email and send the message
 $to = 'dongpoding@126.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.

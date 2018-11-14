@@ -32,7 +32,7 @@ $(function() {
             }
             $.ajax({
                 url: "/mail/contact_me.php",
-                type: "GET",
+                type: "POST",
                 data: {
                     name: name,
                     phone: phone,
