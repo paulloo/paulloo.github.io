@@ -20,3 +20,9 @@ gem install jekyll
 ```
 首先要在github创建一个项目命名为 你的github名字.github.io(我的就是paulloo.github.io)
 我用的现成Jekyll-Bootstrap模板
+
+执行
+```
+jekyll serve
+```
+就可以访问了
