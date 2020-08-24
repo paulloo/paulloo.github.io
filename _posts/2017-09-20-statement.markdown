@@ -1,7 +1,9 @@
 ---
 layout:     post
-title:      "Paul Blog 前端方向的博客分享乐园"
-subtitle:   "知识的分享也是对自我的总结，接受鼓励和批评，总要走出这一步！"
+title:      "优秀前端github开源项目汇总"
+
+
+subtitle:   ""
 author:     "Paul Ding"
 header-img: "img/post-bg-06.jpg"
 ---
