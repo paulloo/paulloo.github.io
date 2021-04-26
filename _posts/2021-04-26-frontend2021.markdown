@@ -1,0 +1,30 @@
+---
+layout: post
+title: 2021年前端的技术方向分析
+subtitle: from Paul
+categories: [js]
+author: Paul
+---
+
+## 总览
+
+javascript/Typescript
+
+![js](../img/frontend2021/State-of-JS-Typescript-usage_.png)
+
+状态管理
+
+![js](../img/frontend2021/State-of-JS-data-layer-usage_.png)
+
+前端框架
+
+![js](../img/frontend2021/State-of-JS-the-most-used-Javascript-frameworks_.png)
+
+后端框架
+![js](../img/frontend2021/State-of-JS-backend-frameworks_.png)
+
+测试库
+![js](../img/frontend2021/State-of-JS-testing-JavaScript-trends-2021_.png)
+
+小程序
+

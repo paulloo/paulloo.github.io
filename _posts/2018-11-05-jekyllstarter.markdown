@@ -15,6 +15,13 @@ Jekyll安装需要准备
 `在 Windows 下使用 Jekyll`
 你可以使用 [Jekyll running on Windows](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html), 但是官方文档并不建议你在 Windows 平台上安装 Jekyll。
 
+ruby3.0 
+在 Gemfile 中需要新增下面两个依赖
+```
+  gem 'wdm', '~> 0.1.0'
+  gem "webrick"
+```
+
 ```
 gem install jekyll
 ```
