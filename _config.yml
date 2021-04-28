@@ -1,11 +1,12 @@
 # Site settings
-title: 前端梦想家
+title: 财富猿
 header-img: img/home-bg.jpg
 email: dongpoding@gmail.com
 copyright_name: Paul/Blog/Paul&Zoe
+SEOTitle: 财富猿
 description: "Write your site description here. It will be used as your sites meta description as well!"
 baseurl: ""
-url: "http://dingdongpo.com"
+url: "https://ddp.life"
 twitter_username: paullood
 github_username:  paulloo
 facebook_username:  dongpoding
