@@ -1,0 +1,169 @@
+I"�<p>koa2 / jquery / cropper / cloudinary</p>
+
+<h2 id="前端">前端</h2>
+
+<blockquote>
+  <p>选择图片
+```</p>
+</blockquote>
+<xmp>
+<input id="fileupload" type="file" name="files[]" multiple="" />
+<div class="img-preview" style="margin: 2px"></div>
+<div>
+    <img id="image" src="/index/imgs/tiaoma.jpg" />
+</div>
+<button id="uploadImage">保存</button>
+</xmp>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; 预览图片
+</code></pre></div></div>
+<p>var $image = $(“#image”);
+var $inputImage = $(“#fileupload”);
+var URL = window.URL || window.webkitUIL;</p>
+
+<p>if(URL) {
+    $inputImage.change(function () {
+        var files = this.files;
+        var file;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    if (!$image.data('cropper')) {
+        return;
+    }
+    console.log(files);
+    if (files &amp;&amp; files.length) {
+        file = files[0];
+        if (/^image\/\w+$/.test(file.type)) {
+            blobURL = URL.createObjectURL(file);
+            $image.one('built.cropper', function () {
+                // Revoke when load complete
+                URL.revokeObjectURL(blobURL);
+            }).cropper('reset').cropper('replace', blobURL);
+            $inputImage.val('');
+        } else {
+            window.alert('Please choose an image file.');
+        }
+    }
+}); } else {
+$inputImage.prop('disabled', true).parent().addClass('disabled'); }
+</code></pre></div></div>
+
+<p>$image.cropper({
+    aspectRatio: 1 / 1,
+    preview: ‘.img-preview’,
+    crop: function(e) {
+        // Output the result data for cropping image.
+        // console.log(e.x);
+        // console.log(e.y);
+        // console.log(e.width);
+        // console.log(e.height);
+        // console.log(e.rotate);
+        // console.log(e.scaleX);
+        // console.log(e.scaleY);
+    },
+});</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; 上传图片
+</code></pre></div></div>
+<p>$(‘#uploadImage’).on(‘click’, function () {
+    console.log(‘上传所选’);
+    $(‘#image’).cropper(‘getCroppedCanvas’, {
+        width: 148,
+        height: 148,
+    }).toBlob(function (blob) {
+        console.log(blob.size);
+        if ((blob.size / 1024) &gt; 1024) {
+            alert(‘图片文件过大!’);
+            return;
+        }
+        let formData = new FormData();
+        formData.append(‘avatarFile’, blob);
+        $.ajax({
+            url: ‘/api/upload’,
+            type: “POST”,
+            dataType: ‘json’,
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (message) {
+                console.log(message);
+                if (message.result) {
+                    console.log(‘Upload success’);
+                    let d = new Date();
+                    $(‘#avatar’).attr(“src”, message.avatarUrl + ‘?’ + d.getTime());
+                    $(‘#userCardAvatar’).attr(“src”, message.avatarUrl + ‘?’ + d.getTime());
+                    $(‘.ui.modal’).modal(‘hide’);
+                    //window.location.reload();
+                } else {
+                    console.log(‘Upload failed’);
+                    $(‘#uploadImage’).removeClass(‘loading’);
+                    $(‘#uploadImage’).attr(‘disabled’, false);
+                }</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        },
+        error: function () {
+            console.log('Upload error');
+        }
+    });
+    $('#uploadImage').addClass('loading');
+    $('#uploadImage').attr('disabled', true);
+}); }); ``` ![](imgs/review.png)
+</code></pre></div></div>
+
+<h2 id="后端">后端</h2>
+<blockquote>
+  <p>cloudinary.js</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var fs = require('fs')
+var cloudinary = require('cloudinary')
+var config = require('../../config/cloudinary.json')
+
+cloudinary.config({
+  'cloud_name': config.cloud_name,
+  'api_key': config.api_key,
+  'api_secret': config.api_secret
+})
+
+exports.upload = async (path) =&gt; {
+  return new Promise(function (resolve, reject) {
+    cloudinary.uploader.upload(path, function (result) {
+      console.log(result)
+      fs.readdir('./uploads', (err, files) =&gt; {
+        if (err) {
+          console.log(err)
+        }
+        for (var fileName in files) {
+          if (fileName !== 'readme.md') {
+            fs.unlink('./uploads/' + fileName, err =&gt; {
+              if (err) {
+                console.log(err)
+              }
+            })
+          }
+        }
+      })
+      resolve(result)
+    })
+  })
+}
+</code></pre></div></div>
+
+<blockquote>
+  <p>upload.js
+```
+import cloudinary from ‘../src/lib/cloudinary’</p>
+</blockquote>
+
+<p>exports.action = async(ctx) =&gt; {
+  console.log(ctx.request.body.files.avatarFile.path)
+  var result = await cloudinary.upload(ctx.request.body.files.avatarFile.path)
+  ctx.body = {
+    data: result
+  }
+  return
+}
+```</p>
+
+<h2 id="相关入口">相关入口</h2>
+<blockquote>
+  <p><a href="https://cloudinary.com/documentation/node_integration#getting_started_guide">cloudinary 文档</a></p>
+</blockquote>
+:ET
