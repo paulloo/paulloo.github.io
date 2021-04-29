@@ -28,6 +28,15 @@ Marcin Gajda: 就最常用的JS框架而言，[“State of JavaScript 2020”](h
 - 我相信未来几年，Svelte将会有更多特性，取代Vue轻而易举，也将会是React， Angular大厂有趣的替代品。特别是对所谓的“轻应用”开发者来说。  
     ---- Marcin Gajda *Lead Frontend Developer*
 
+我们的开发工程师早在2019年就体验了Svelte, 想看看它是如何工作的。我们开发了一款线上游戏叫[Typerunner.js](https://tsh.io/typerunner/game/d95c099f-13b8-4ed9-8649-fb39d858ab49), 您可以邀请朋友们一起来玩，看谁的手速快。Svelte运行的体验还是很不错的，并且我们会持续关注它进一步的发展。
+
+此外，Angularjs在榜上的排名也很有意思。尽管有超过一半的开发者在使用，但少有人对该框架感兴趣。 大家有一点都打成共识，Angular的门槛高，一半大型、复杂项目才会用到。预计2021年大家还是倾向于易于使用，小型轻量级的框架。
+
+至于后者，最新的2020js开发者大会上 Javascript框架满意度调查。令人惊讶的是，Svelte 居然超越React 位居第一。这就意味着，将有更多的开发者会持续关注这一“橙色的框架”
+
+![js](/img/frontend2021/State-of-JS-the-most-used-Javascript-frameworks-Svelte_.png)
+
+
 状态管理
 
 ![js](/img/frontend2021/State-of-JS-data-layer-usage_.png)
