@@ -44,9 +44,9 @@ Marcin Gajda: 就最常用的JS框架而言，[“State of JavaScript 2020”](h
 在React阵营，Redux仍然是解决复杂场景的主要选择，但是用户满意度上明显有所下降。然而，这也给GraphQL 和 基于Apollo 解决方案提供了机会，由于这两种技术发展缓慢，但肯定会在React开发人员中提高满意度，使用率和知名度。我们前端负责人AndrzejWysoczański就2021年JavaScript趋势提供了他的观点。
 Andrzej Wysoczański: 使用个人解决方案和Redux竞争并非易事。尽管人们对此工具的兴趣和满意度有所下降，而倾向于使用React中的Context API，但对于大型应用程序来说，它仍然是不可替代的。也许Vue3.0的亮相，会让vuex的知名度在2021年不断飙升。或者我们可以从第二梯队的XState中看到新的可能？
 GraphQL现在及其流行，已然在兴趣和用户满意度排名第一。易用，非常棒的后端交互体验，将会是它成功的关键。
-前端开发者的热情高涨，Apollo 客户端， GraphQL将在2021 无与伦比
+前端开发者的热情高涨，Apollo Client， GraphQL将在2021 无与伦比
                                 ------------- Andrzej Wysoczański
-                                
+
 ![js](/img/frontend2021/State-of-JS-data-layer-usage_.png)
 
 后端框架
