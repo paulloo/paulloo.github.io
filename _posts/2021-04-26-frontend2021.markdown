@@ -2,7 +2,7 @@
 layout: post
 title: 2021年前端的技术方向分析
 subtitle: from Paul
-categories: [js]
+categories: [JavaScript]
 author: Paul
 ---
 
