@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
+gem 'jekyll-paginate'
 
-group :jekyll_plugins do
-  gem "jekyll-paginate"
-  gem "jekyll-feed"
-  gem "jekyll"
-  gem 'wdm', '~> 0.1.0'
-  gem "webrick"
-end
+gem "jekyll", "~> 4.0"
+gem "rake"
+
+gem "webrick", "~> 1.7"

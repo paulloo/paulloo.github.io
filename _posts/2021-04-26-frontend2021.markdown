@@ -1,10 +1,15 @@
 ---
-layout: post
-title: 2021年前端的技术方向分析
-subtitle: from Paul
-categories: [JavaScript]
-author: Paul
+layout:     post
+title:      "2021年前端的技术方向分析"
+subtitle:   "Javascript开发者大会"
+date:       2021-04-26 12:00:00
+author:     "Paulloo"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - JavaScript
 ---
+
 
 一年一度的Javascript开发者大会[“State of JavaScript 2020”](https://2020.stateofjs.com/zh-Hans/)。给我们带来了新的启发，开阔了眼界。我们不能错过这个重要的研究成果，因此，我叫了我们同事一起探讨，试图对2021年Javascript的生态做一个预测分享。
 
